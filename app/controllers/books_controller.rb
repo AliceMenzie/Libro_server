@@ -15,8 +15,8 @@ class BooksController < ApplicationController
   end
 
   def update
-    @book = Book.find(params[:id])
-    if @trip.update(book_params)
+    # @book = Book.find(params[:id])
+    if @book.update(book_params)
       render json: @book, status: :ok
     else
       render json: @book.errors, status: :unprocessable_entity
@@ -34,6 +34,6 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:author, :title, :year, :status, :genre)
+    params.require(:book).permit(:author, :title, :year, :genre, :status)
   end
 end
