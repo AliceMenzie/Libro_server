@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:update, :destroy]
+  before_action :authenticated
 
   def index
     render json: Book.all.order(id: :asc)
