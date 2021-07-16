@@ -1,9 +1,18 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:update, :destroy]
+  before_action :set_book, only: %i[update destroy]
   before_action :authenticated
 
   def index
     render json: Book.all.order(id: :asc)
+  end
+
+  def wishlist
+    render json: current_user.books.status("unread")
+  end
+
+  # need to change status to read
+  def history
+    render json: current_user.books.where(status: "unread")
   end
 
   def create
