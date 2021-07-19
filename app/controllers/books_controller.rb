@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: %i[update destroy]
+  before_action :set_book, only: %i[update destroy show]
   before_action :authenticated
 
   def index
@@ -13,6 +13,12 @@ class BooksController < ApplicationController
   # need to change status to read
   def history
     render json: current_user.books.where(status: "unread")
+  end
+
+  # show method
+  def show
+    # render json: @book, include: [:reviews], status: :ok
+    render json: @book, status: :ok
   end
 
   def create

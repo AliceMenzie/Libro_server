@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts 'Seed Starting'
+puts 'Seeding started'
 
 user = User.create(username: 'alice',
                    email: 'a@gmail.com',
@@ -64,6 +64,12 @@ book = Book.create(
   genre: 'Fantasy',
   status: 'unread',
   user_id: 1
+)
+
+review = Review.create(
+  description: 'this is our first description',
+  rating: 3,
+  book_id: 1
 )
 
 puts 'Seed End'
