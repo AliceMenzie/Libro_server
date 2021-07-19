@@ -17,8 +17,8 @@ class BooksController < ApplicationController
 
   # show method
   def show
-    # render json: @book, include: [:reviews], status: :ok
-    render json: @book, status: :ok
+    render json: @book, include: [:review], status: :ok
+    # render json: @book, status: :ok
   end
 
   def create
