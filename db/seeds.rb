@@ -18,7 +18,7 @@ book = Book.create(
   title: 'Harry Potter and the Chamber of Secrets',
   year: 1998,
   genre: 'Fantasy',
-  status: 'unread',
+  status: 'read',
   user_id: 1
 )
 
@@ -53,7 +53,7 @@ book = Book.create(
   title: 'Harry Potter and the Philosophers Stone',
   year: 1997,
   genre: 'Fantasy',
-  status: 'unread',
+  status: 'read',
   user_id: 1
 )
 
@@ -62,7 +62,7 @@ book = Book.create(
   title: 'Harry Potter and the Prisoner of Azkaban',
   year: 1999,
   genre: 'Fantasy',
-  status: 'unread',
+  status: 'read',
   user_id: 1
 )
 

@@ -7,12 +7,12 @@ class BooksController < ApplicationController
   end
 
   def wishlist
-    render json: current_user.books.status("unread")
+    render json: current_user.books.where(status: "unread")
   end
 
   # need to change status to read
   def history
-    render json: current_user.books.where(status: "unread")
+    render json: current_user.books.where(status: "read")
   end
 
   # show method
