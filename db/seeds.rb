@@ -22,6 +22,12 @@ book = Book.create(
   user_id: 1
 )
 
+review = Review.create(
+  description: 'this is our first description',
+  rating: 3,
+  book_id: 1
+)
+
 book = Book.create(
   author: 'Harper Lee',
   title: 'How to Kill a mockingbird',
@@ -31,12 +37,25 @@ book = Book.create(
   user_id: 1
 )
 
+review = Review.create(
+  description: 'this is our 2nd description',
+  rating: 5,
+  book_id: 2
+)
+
 book = Book.create(
   author: 'J. R. R. Tolkien',
   title: 'The Hobbit',
   year: 1937,
   genre: 'Fiction',
-  status: 'unread'
+  status: 'unread',
+  user_id: 1
+)
+
+review = Review.create(
+  description: 'this is our 3nd description',
+  rating: 2,
+  book_id: 3
 )
 
 book = Book.create(
@@ -48,6 +67,12 @@ book = Book.create(
   user_id: 1
 )
 
+review = Review.create(
+  description: 'this is our 4nd description',
+  rating: 4,
+  book_id: 4
+)
+
 book = Book.create(
   author: 'J.K. Rowling',
   title: 'Harry Potter and the Philosophers Stone',
@@ -55,6 +80,12 @@ book = Book.create(
   genre: 'Fantasy',
   status: 'read',
   user_id: 1
+)
+
+review = Review.create(
+  description: 'this is our 5nd description',
+  rating: 1,
+  book_id: 5
 )
 
 book = Book.create(
@@ -67,9 +98,107 @@ book = Book.create(
 )
 
 review = Review.create(
-  description: 'this is our first description',
+  description: 'this is our 6nd description',
   rating: 3,
-  book_id: 1
+  book_id: 6
+)
+# _______________________________________________
+
+# USER 2
+# _______________________________________________
+
+user = User.create(username: 'mark',
+                   email: 'm@gmail.com',
+                   password: 'qwerti',
+                   password_confirmation: 'qwerti')
+
+book = Book.create(
+  author: 'J.K. Rowling',
+  title: 'Harry Potter and the Chamber of Secrets',
+  year: 1998,
+  genre: 'Fantasy',
+  status: 'read',
+  user_id: 2
 )
 
+review = Review.create(
+  description: 'this is our 8th description',
+  rating: 2,
+  book_id: 7
+)
+
+book = Book.create(
+  author: 'Harper Lee',
+  title: 'How to Kill a mockingbird',
+  year: 1960,
+  genre: 'Fiction',
+  status: 'unread',
+  user_id: 2
+)
+
+review = Review.create(
+  description: 'this is our 9th description',
+  rating: 4,
+  book_id: 8
+)
+
+book = Book.create(
+  author: 'J. R. R. Tolkien',
+  title: 'The Hobbit',
+  year: 1937,
+  genre: 'Fiction',
+  status: 'unread',
+  user_id: 2
+)
+
+review = Review.create(
+  description: 'this is our 10th description',
+  rating: 1,
+  book_id: 9
+)
+
+book = Book.create(
+  author: 'C. S. Lewis',
+  title: 'The Lion, the Witch and the Wardrobe',
+  year: 1950,
+  genre: 'Fiction',
+  status: 'unread',
+  user_id: 2
+)
+
+review = Review.create(
+  description: 'this is our 11th description',
+  rating: 5,
+  book_id: 10
+)
+
+book = Book.create(
+  author: 'J.K. Rowling',
+  title: 'Harry Potter and the Philosophers Stone',
+  year: 1997,
+  genre: 'Fantasy',
+  status: 'read',
+  user_id: 2
+)
+
+review = Review.create(
+  description: 'this is our 12th description',
+  rating: 3,
+  book_id: 11
+)
+
+book = Book.create(
+  author: 'J.K. Rowling',
+  title: 'Harry Potter and the Prisoner of Azkaban',
+  year: 1999,
+  genre: 'Fantasy',
+  status: 'read',
+  user_id: 2
+)
+
+review = Review.create(
+  description: 'this is our 13th description',
+  rating: 4,
+  book_id: 12
+)
 puts 'Seed End'
