@@ -13,6 +13,12 @@ RSpec.describe User, type: :model do
     expect(user).to be_valid
   end
 
+  describe "Database tables" do
+    it { expect(user).to have_db_column(:email).of_type(:string) }
+    it { expect(user).to have_db_column(:username).of_type(:string) }
+    # it { expect(user).to have_db_column(:password).of_type(:string) }
+  end
+
   describe "validations" do
     it "should be invalid without an email" do
       user.email = nil
@@ -48,5 +54,9 @@ RSpec.describe User, type: :model do
       user.username = "#3 #3#**"
       expect(user).to_not be_valid
     end
+  end
+
+  describe "associations" do
+    it { should have_many(:books) }
   end
 end
