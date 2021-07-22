@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: %i[update destroy show]
-  before_action :authenticated
+  before_action :authenticated, only: %i[wishlist history create update destroy]
 
   def index
     render json: Book.all.order(id: :asc)
