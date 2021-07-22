@@ -30,6 +30,14 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # RSPEC testing gem
   gem 'rspec-rails', '~> 5.0.0'
+  # ShouldaMatchers testing gem
+  gem 'shoulda-matchers', '~> 5.0'
+  # Rails Controller testing gem
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
+  # Database Cleaner Gem
+  gem 'database_cleaner', '~> 2.0', '>= 2.0.1'
+  # factory bot
+  gem 'factory_bot_rails'
 end
 
 group :development do
