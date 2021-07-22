@@ -60,3 +60,85 @@ RSpec.describe Book, type: :model do
     it { should belong_to(:user) }
   end
 end
+
+describe "Books", type: :request do
+  describe "GET /index" do
+    before(:each) do
+      get books_path
+    end
+
+    it "should respond with 200 ok" do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it "should respond with json" do
+      expect(response.content_type).to eq("application/json; charset=utf-8")
+    end
+  end
+
+  describe "GET /books/:id" do
+    before(:all) do
+      create(:user)
+      create(:book)
+    end
+
+    context "when going to a valid id" do
+      before(:each) do
+        build(:book)
+        get "/books/1"
+      end
+
+      it "should respond with 200 ok" do
+        expect(response).to have_http_status(:ok)
+      end
+
+      it "should respond with json" do
+        expect(response.content_type).to eq("application/json; charset=utf-8")
+      end
+      # --------------
+
+    end
+
+    # context "when going to an invalid id" do
+    #   before(:each) do
+    #     get "/books/100"
+    #   end
+    #   it "should respond with a :unprocessable_entity" do
+    #     expect(response).to have_http_status(:unprocessable_entity)
+    #   end
+
+    #   it "should respond with a 'Page not found' " do
+    #     expect(response.body).to include("#{@book.errors}")
+    #   end
+    # end
+
+  end
+end
+
+#       # ----------------------------------------------------------------
+#       # CHECK THIS TEST X3
+#       # ----------------------------------------------------------------
+
+#       it "routes to #update via PUT" do
+#         expect(put: "/books/1").to route_to("books#update", id: "1")
+#       end
+
+#       it "routes to #delete via delete" do
+#         expect(delete: "/books/1").to route_to("books#destroy", id: "1")
+#       end
+#     end
+
+#     context "when going to an invalid id" do
+#       before(:example) do
+#         @book = FactoryBot.create(:book)
+#         get "/books/100"
+#         @json_response = JSON.parse(response.body)
+#       end
+#       it "should respond with a 404 error" do
+#         expect(response).to have_http_status(404)
+#       end
+
+#       it "should respond with a 'Page not found' " do
+#         expect(response.body).to include("Page not found")
+#       end
+#     end

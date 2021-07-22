@@ -60,3 +60,55 @@ RSpec.describe User, type: :model do
     it { should have_many(:books) }
   end
 end
+
+#
+#
+#
+describe "Users", type: :request do
+  # describe "sign_up_path" do
+  #   before(:each) do
+  #     build(:user)
+  #     post sign_up_path
+  #   end
+
+  #   it "should respond with 200 ok" do
+  #     expect(response).to have_http_status(:ok)
+  #   end
+
+  #   it "should respond with json" do
+  #     expect(response.content_type).to eq("application/json; charset=utf-8")
+  #   end
+  # end
+
+  describe "login_path" do
+    before(:all) do
+      create(:user)
+    end
+
+    context "when valid login" do
+      before(:each) do
+        build(:user)
+        post login_path
+      end
+
+      it "should respond with 200 ok" do
+        expect(response).to have_http_status(:ok)
+      end
+
+      it "should respond with json" do
+        expect(response.content_type).to eq("application/json; charset=utf-8")
+      end
+    end
+
+    context "when going to an invalid login_path" do
+      before(:each) do
+        @invaild_user = FactoryBot.build(:user, :invalid)
+        post login_path
+      end
+
+      it "should be invalid with the wrong username " do
+        expect(@invaild_user).to be_invalid
+      end
+    end
+  end
+end
