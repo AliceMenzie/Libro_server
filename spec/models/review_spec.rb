@@ -81,7 +81,6 @@ describe "Reviews", type: :request do
       #   it "should be invalid with the wrong rating " do
       #     expect(@invaild_review).to be_invalid
       #   end
-      end
     end
   end
 end
