@@ -52,6 +52,6 @@ class ReviewsController < ApplicationController
   end
 end
 
-def set_book
-  @book = Book.find(review_params[:book_id])
-end
+  def set_book
+    @book = Book.find(review_params[:book_id])
+  end
