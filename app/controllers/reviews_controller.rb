@@ -45,7 +45,7 @@ class ReviewsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_review
-    @review = Review.find(params[:id])
+    @review = Book.find(params[:id]).review
   end
 
   # Only allow a trusted parameter "white list" through.
@@ -55,5 +55,5 @@ class ReviewsController < ApplicationController
 end
 
   def set_book
-    @book = Book.find(review_params["book_id"])
+    @book = Book.find(review_params[:book_id])
   end

@@ -47,9 +47,9 @@ class BooksController < ApplicationController
   # show method
   def show
     begin
-      @show_book = {user_id: @user.id, id: @book.id, title: @book.title, author: @book.author, year: @book.year, genre: @book.genre, status: @book.status, image: @book.bookimage.service_url}
+      @show_book = {user_id: @book.user_id, id: @book.id, title: @book.title, author: @book.author, year: @book.year, genre: @book.genre, status: @book.status, image: @book.bookimage.service_url, review: @book.review.as_json}
     rescue => exception
-      @show_book = {user_id: @user.id, id: @book.id, title: @book.title, author: @book.author, year: @book.year, genre: @book.genre, status: @book.status, image: 'https://edit.org/images/cat/book-covers-big-2019101610.jpg'}
+      @show_book = {user_id: @book.user_id, id: @book.id, title: @book.title, author: @book.author, year: @book.year, genre: @book.genre, status: @book.status, image: 'https://edit.org/images/cat/book-covers-big-2019101610.jpg', review: @book.review.as_json}
     end
     render json: @show_book, include: [:review], status: :ok
     # render json: @book, include: [:review], status: :ok
