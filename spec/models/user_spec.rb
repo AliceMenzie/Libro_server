@@ -16,7 +16,6 @@ RSpec.describe User, type: :model do
   describe "Database tables" do
     it { expect(user).to have_db_column(:email).of_type(:string) }
     it { expect(user).to have_db_column(:username).of_type(:string) }
-    # it { expect(user).to have_db_column(:password).of_type(:string) }
   end
 
   describe "validations" do
@@ -61,25 +60,7 @@ RSpec.describe User, type: :model do
   end
 end
 
-#
-#
-#
 describe "Users", type: :request do
-  # describe "sign_up_path" do
-  #   before(:each) do
-  #     build(:user)
-  #     post sign_up_path
-  #   end
-
-  #   it "should respond with 200 ok" do
-  #     expect(response).to have_http_status(:ok)
-  #   end
-
-  #   it "should respond with json" do
-  #     expect(response.content_type).to eq("application/json; charset=utf-8")
-  #   end
-  # end
-
   describe "login_path" do
     before(:all) do
       create(:user)

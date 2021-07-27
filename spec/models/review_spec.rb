@@ -30,10 +30,6 @@ RSpec.describe Review, type: :model do
   end
 end
 
-#
-#
-#
-#
 describe "Reviews", type: :request do
   describe "GET /index" do
     before(:each) do
@@ -69,18 +65,6 @@ describe "Reviews", type: :request do
           expect(response.content_type).to eq("application/json; charset=utf-8")
         end
       end
-
-      # context "when going to an invalid review" do
-      #   before(:each) do
-      #     build(:user)
-      #     build(:book)
-      #     @invaild_review = FactoryBot.build(:review, :invalidreview)
-      #     post reviews_path
-      #   end
-
-      #   it "should be invalid with the wrong rating " do
-      #     expect(@invaild_review).to be_invalid
-      #   end
     end
   end
 end
